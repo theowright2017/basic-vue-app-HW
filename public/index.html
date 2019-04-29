@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue App</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>ToDo's</h1>
+      <input type="text" v-model="newItem">
+
+      <input type="radio" name="radio" value="High"
+      v-model="pickedPriority">
+      <label for="High">High</label>
+      <input type="radio" name="radio" value="Low"
+      v-model= "pickedPriority">
+      <label for="Low">Low</label>
+      <button @click= "saveNewItem()">Save New Item</button>
+
+      <ul>
+        <li v-for="(item, index) in items" v-bind:class= "
+        item.priority === 'High' ? 'high' : 'low'">
+          <span>{{ item.name }}</span>
+          <button v-if= "item.priority === 'High'" @click= "changePriorityToLow(index)" >Mark as Completed</button>
+          <button v-if= "item.priority === 'Low'" @click= "changePriorityToHigh(index)" >Mark as Urgent</button>
+        </li>
+      </ul>
+
+    </div>
+
+  </body>
+
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,16 @@
+li {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+li span {
+  padding: 5px;
+}
+li button {
+  margin: 5px;
+}
+
+.high {
+  background-color: red;
+}
